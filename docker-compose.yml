@@ -1,0 +1,10 @@
+version: "2"
+services:
+  abellot-web:
+    image: nginx:latest
+    container_name: abellot-web
+    volumes:
+      - ./web/:/usr/share/nginx/html
+    ports:
+      - 8083:80
+    restart: unless-stopped
