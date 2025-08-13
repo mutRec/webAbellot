@@ -1,0 +1,203 @@
+/* Estils generals del cos de la pàgina */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    /* Degradat groc ataronjat més intens */
+    background: linear-gradient(115deg, #FFD600 0%, #FFB300 50%, #FF7043 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Contenidor principal per al logotip i els botons */
+.circular-menu-container {
+    position: relative;
+    width: 500px;  /* Mida del contenidor principal */
+    height: 500px;
+}
+
+/* Estils del contenidor del logotip central */
+.logo-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centrar el logotip */
+    width: 550px;
+    height: 550px;
+    border-radius: 50%; /* Fer-lo rodó */
+    background-color: #ffffff; /* Color de fons del logotip */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-logo {
+    width: 80%;
+    height: 80%;
+    object-fit: contain; /* Assegurar que el logotip s'ajusta bé */
+    border-radius: 50%; /* Arrodoneix la imatge */
+}
+
+/* Estils del contenidor dels botons */
+.buttons-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+/* Estils per a cada botó del menú */
+.menu-button {
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-weight: 800;      /* Molt gruixuda */
+    font-size: 24px;       /* Més grossa */
+    letter-spacing: 1px;
+    font-size: 22px;
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #FFD600;
+    color: #333;
+    border: 2px solid #222;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* Posicionament dels 4 botons al voltant del cercle */
+.buttons-container .menu-button:nth-child(1) {
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.buttons-container .menu-button:nth-child(2) {
+    top: 50%;
+    right: 0;
+    transform: translate(50%, -50%);
+}
+.buttons-container .menu-button:nth-child(3) {
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 50%);
+}
+.buttons-container .menu-button:nth-child(4) {
+    top: 50%;
+    left: 0;
+    transform: translate(-50%, -50%);
+}
+
+.menu-button:hover {
+    background-color: #6efaff;
+    transform: scale(1.1);
+}
+
+/* Estils per a les seccions de contingut */
+.content-section {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70%;
+    max-width: 800px;
+    padding: 2em;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    text-align: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+    z-index: 10;
+}
+
+.content-section.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.hidden {
+    display: none;
+}
+
+.main-content {
+    transition: transform 0.7s cubic-bezier(.77,0,.18,1);
+    will-change: transform;
+}
+
+.main-content.shift-left {
+    transform: translateX(-22vw);
+}
+
+.section-description {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40vw;
+    height: 100vh;
+    background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.45)), 
+                url('../images/sections-background.jpg') center/cover no-repeat;;
+    box-shadow: -4px 0 16px rgba(0,0,0,0.08);
+    padding: 60px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s;
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-size: 1.25rem;      /* Més gran */
+    font-weight: 300;        /* Més fina */
+    line-height: 1.2;        /* Més espaiat i net */
+    letter-spacing: 0.01em;
+    color: #222;
+}
+
+.section-description.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.back-button {
+    margin-top: 32px;
+    padding: 10px 28px;
+    font-size: 18px;
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-weight: 700;
+    background: #FFD600;
+    color: #333;
+    border: 2px solid #222;
+    border-radius: 0px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.back-button:hover {
+    background: #6efaff;
+}
+
+.app-link {
+    display: block;
+    margin: 32px auto 0 auto; /* Centrat horitzontalment i separació superior */
+    padding: 12px 28px;
+    font-size: 18px;
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-weight: 700;
+    background: #FFD600;
+    color: #222;
+    border: 2px solid #222;
+    border-radius: 24px;
+    text-decoration: none;
+    transition: background 0.2s;
+}
+.app-link:hover {
+    background: #6efaff;
+    color: #222;
+}
