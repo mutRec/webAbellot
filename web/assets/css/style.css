@@ -1,203 +1,422 @@
 /* Estils generals del cos de la pàgina */
 body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    margin: 0;
-    /* Degradat groc ataronjat més intens */
-    background: linear-gradient(115deg, #FFD600 0%, #FFB300 50%, #FF7043 100%);
-    position: relative;
-    overflow: hidden;
+	font-family: Arial, sans-serif;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	margin: 0;
+	/* Degradat groc ataronjat més intens */
+	background: linear-gradient(115deg, #FFD600 0%, #FFB300 50%, #FF7043 100%);
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
+	overflow-x: hidden;
+	overflow-y: hidden;
 }
 
 /* Contenidor principal per al logotip i els botons */
 .circular-menu-container {
-    position: relative;
-    width: 500px;  /* Mida del contenidor principal */
-    height: 500px;
+	position: relative;
+	width: 500px;  /* Mida del contenidor principal */
+	height: 500px;
 }
 
 /* Estils del contenidor del logotip central */
 .logo-container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); /* Centrar el logotip */
-    width: 550px;
-    height: 550px;
-    border-radius: 50%; /* Fer-lo rodó */
-    background-color: #ffffff; /* Color de fons del logotip */
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%); /* Centrar el logotip */
+	width: 550px;
+	height: 550px;
+	border-radius: 50%; /* Fer-lo rodó */
+	background-color: #ffffff; /* Color de fons del logotip */
+	box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .main-logo {
-    width: 80%;
-    height: 80%;
-    object-fit: contain; /* Assegurar que el logotip s'ajusta bé */
-    border-radius: 50%; /* Arrodoneix la imatge */
+	width: 80%;
+	height: 80%;
+	object-fit: contain; /* Assegurar que el logotip s'ajusta bé */
+	border-radius: 50%; /* Arrodoneix la imatge */
 }
 
 /* Estils del contenidor dels botons */
 .buttons-container {
-    width: 100%;
-    height: 100%;
-    position: relative;
+	width: 100%;
+	height: 100%;
+	position: relative;
 }
 
 /* Estils per a cada botó del menú */
 .menu-button {
-    font-family: 'Montserrat', Arial, sans-serif;
-    font-weight: 800;      /* Molt gruixuda */
-    font-size: 24px;       /* Més grossa */
-    letter-spacing: 1px;
-    font-size: 22px;
-    position: absolute;
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    background-color: #FFD600;
-    color: #333;
-    border: 2px solid #222;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
-    transition: transform 0.3s ease, background-color 0.3s ease;
+	font-family: 'Montserrat', Arial, sans-serif;
+	font-weight: 800;      /* Molt gruixuda */
+	font-size: 24px;       /* Més grossa */
+	letter-spacing: 1px;
+	font-size: 22px;
+	position: absolute;
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	background-color: #FFD600;
+	color: #333;
+	border: 2px solid #222;
+	cursor: pointer;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+	transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
 /* Posicionament dels 4 botons al voltant del cercle */
 .buttons-container .menu-button:nth-child(1) {
-    top: 0;
-    left: 50%;
-    transform: translate(-50%, -50%);
+	top: 0;
+	left: 50%;
+	transform: translate(-50%, -50%);
 }
 .buttons-container .menu-button:nth-child(2) {
-    top: 50%;
-    right: 0;
-    transform: translate(50%, -50%);
+	top: 50%;
+	right: 0;
+	transform: translate(50%, -50%);
 }
 .buttons-container .menu-button:nth-child(3) {
-    bottom: 0;
-    left: 50%;
-    transform: translate(-50%, 50%);
+	bottom: 0;
+	left: 50%;
+	transform: translate(-50%, 50%);
 }
 .buttons-container .menu-button:nth-child(4) {
-    top: 50%;
-    left: 0;
-    transform: translate(-50%, -50%);
+	top: 50%;
+	left: 0;
+	transform: translate(-50%, -50%);
 }
 
 .menu-button:hover {
-    background-color: #6efaff;
-    transform: scale(1.1);
+	background-color: #6efaff;
+	transform: scale(1.1);
 }
 
 /* Estils per a les seccions de contingut */
 .content-section {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 70%;
-    max-width: 800px;
-    padding: 2em;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    text-align: center;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.5s ease, visibility 0.5s ease;
-    z-index: 10;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 70%;
+	max-width: 800px;
+	padding: 2em;
+	background-color: white;
+	border-radius: 10px;
+	box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+	text-align: center;
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity 0.5s ease, visibility 0.5s ease;
+	z-index: 10;
 }
 
 .content-section.visible {
-    opacity: 1;
-    visibility: visible;
+	opacity: 1;
+	visibility: visible;
 }
 
 .hidden {
-    display: none;
+	display: none;
 }
 
 .main-content {
-    transition: transform 0.7s cubic-bezier(.77,0,.18,1);
-    will-change: transform;
+	transition: transform 0.7s cubic-bezier(.77,0,.18,1);
+	will-change: transform;
 }
 
 .main-content.shift-left {
-    transform: translateX(-22vw);
+	transform: translateX(-22vw);
 }
 
 .section-description {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 40vw;
-    height: 100vh;
-    background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.45)), 
-                url('../images/sections-background.jpg') center/cover no-repeat;;
-    box-shadow: -4px 0 16px rgba(0,0,0,0.08);
-    padding: 60px 40px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.5s;
-    font-family: 'Montserrat', Arial, sans-serif;
-    font-size: 1.25rem;      /* Més gran */
-    font-weight: 300;        /* Més fina */
-    line-height: 1.2;        /* Més espaiat i net */
-    letter-spacing: 0.01em;
-    color: #222;
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 40vw;
+	height: 100vh;
+	background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.45)), 
+				url('../images/sections-background.jpg') center/cover no-repeat;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+	background-attachment: fixed;
+	box-shadow: -4px 0 16px rgba(0,0,0,0.08);
+	padding: 60px 40px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity 0.5s;
+	font-family: 'Montserrat', Arial, sans-serif;
+	font-size: 1.25rem;      /* Més gran */
+	font-weight: 300;        /* Més fina */
+	line-height: 1.2;        /* Més espaiat i net */
+	letter-spacing: 0.01em;
+	color: #222;
+	overflow-y: auto;
 }
 
 .section-description.visible {
-    opacity: 1;
-    pointer-events: auto;
+	opacity: 1;
+	pointer-events: auto;
 }
 
 .back-button {
-    margin-top: 32px;
-    padding: 10px 28px;
-    font-size: 18px;
-    font-family: 'Montserrat', Arial, sans-serif;
-    font-weight: 700;
-    background: #FFD600;
-    color: #333;
-    border: 2px solid #222;
-    border-radius: 0px;
-    cursor: pointer;
-    transition: background 0.2s;
+	margin-top: 32px;
+	padding: 10px 28px;
+	font-size: 18px;
+	font-family: 'Montserrat', Arial, sans-serif;
+	font-weight: 700;
+	background: #FFD600;
+	color: #333;
+	border: 2px solid #222;
+	border-radius: 0px;
+	cursor: pointer;
+	transition: background 0.2s;
 }
 .back-button:hover {
-    background: #6efaff;
+	background: #6efaff;
 }
 
 .app-link {
-    display: block;
-    margin: 32px auto 0 auto; /* Centrat horitzontalment i separació superior */
-    padding: 12px 28px;
-    font-size: 18px;
-    font-family: 'Montserrat', Arial, sans-serif;
-    font-weight: 700;
-    background: #FFD600;
-    color: #222;
-    border: 2px solid #222;
-    border-radius: 24px;
-    text-decoration: none;
-    transition: background 0.2s;
+	display: block;
+	margin: 32px auto 0 auto; /* Centrat horitzontalment i separació superior */
+	padding: 12px 28px;
+	font-size: 18px;
+	font-family: 'Montserrat', Arial, sans-serif;
+	font-weight: 700;
+	background: #FFD600;
+	color: #222;
+	border: 2px solid #222;
+	border-radius: 24px;
+	text-decoration: none;
+	transition: background 0.2s;
 }
 .app-link:hover {
-    background: #6efaff;
-    color: #222;
+	background: #6efaff;
+	color: #222;
 }
+
+/* Menú hamburguesa (estat base, es mostra a mòbil) */
+.burger-menu {
+	display: none;
+	flex-direction: column;
+	cursor: pointer;
+	background: rgba(255, 255, 255, 0.9);
+	padding: 10px;
+	border-radius: 8px;
+	box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.burger-menu span {
+	width: 25px;
+	height: 3px;
+	background: #333;
+	margin: 3px 0;
+	transition: 0.3s;
+	border-radius: 2px;
+}
+
+.burger-menu.active span:nth-child(1) {
+	transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.burger-menu.active span:nth-child(2) {
+	opacity: 0;
+}
+
+.burger-menu.active span:nth-child(3) {
+	transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* Ocultar elements mòbils per defecte en desktop */
+.mobile-header,
+.mobile-menu {
+	display: none;
+}
+
+/* Media Queries per a responsive design */
+@media (max-width: 768px) {
+	body {
+		padding: 0;
+		min-height: 100svh;
+		overflow-x: hidden;
+	}
+
+	/* Header mòbil amb logo i hamburguesa */
+	.mobile-header {
+		display: flex;
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		height: 56px;
+		align-items: center;
+		justify-content: space-between;
+		padding: 0 12px;
+		background: linear-gradient(115deg, #FFD600 0%, #FFB300 50%, #FF7043 100%);
+		z-index: 1002;
+	}
+
+	.mobile-logo {
+		height: 32px;
+		width: auto;
+		object-fit: contain;
+	}
+
+	.mobile-title {
+		font-family: 'Montserrat', Arial, sans-serif;
+		font-weight: 800;
+		font-size: 22px;
+		letter-spacing: 1px;
+		color: #222;
+		user-select: none;
+	}
+
+	/* Burger dins el header */
+	.burger-menu {
+		display: flex;
+		position: static;
+		background: transparent;
+		box-shadow: none;
+		padding: 8px;
+	}
+
+	/* Menú desplegable mòbil */
+	.mobile-menu {
+		display: block;
+		position: fixed;
+		top: 56px;
+		left: 0;
+		right: 0;
+		background: rgba(255, 255, 255, 0.95);
+		backdrop-filter: blur(2px);
+		transform: translateY(-100%);
+		transition: transform 0.25s ease;
+		z-index: 1001;
+		padding: 8px 12px 16px 12px;
+		border-bottom: 1px solid rgba(0,0,0,0.08);
+		max-height: calc(100svh - 56px);
+		overflow-y: auto;
+	}
+
+	.mobile-menu.active {
+		transform: translateY(0);
+	}
+
+	.mobile-menu a {
+		display: block;
+		padding: 14px 8px;
+		margin: 2px 0;
+		text-decoration: none;
+		font-family: 'Montserrat', Arial, sans-serif;
+		font-weight: 700;
+		font-size: 16px;
+		color: #222;
+		border-radius: 6px;
+		transition: background 0.2s ease, color 0.2s ease;
+	}
+
+	.mobile-menu a:hover {
+		background: rgba(255, 165, 0, 0.22); /* taronja clar */
+	}
+
+	.mobile-menu a:active {
+		background: rgba(0,0,0,0.06);
+	}
+
+	/* Ocultar completament el contenidor circular i botons en mòbil */
+	.circular-menu-container {
+		display: none;
+	}
+
+	/* Secció de descripció per a mòbils a sobre de tot */
+	.section-description {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100svh;
+		padding: 20px;
+		font-size: 1rem;
+		overflow-y: auto;
+		z-index: 2000;
+		background-size: 115% auto;
+		background-attachment: fixed;
+	}
+
+	/* Animació no necessària en mòbil per al contingut principal */
+	.main-content.shift-left {
+		transform: none;
+	}
+
+	/* Botons interns de la fitxa */
+	.back-button, .app-link {
+		width: 100%;
+		max-width: 320px;
+		margin: 20px auto;
+		text-align: center;
+		display: block;
+	}
+}
+
+@media (max-width: 480px) {
+	.mobile-logo {
+		height: 28px;
+	}
+
+	.mobile-menu a {
+		font-size: 15px;
+		padding: 12px 8px;
+	}
+
+	.section-description {
+		padding: 16px;
+		font-size: 0.95rem;
+	}
+
+	.back-button, .app-link {
+		padding: 12px 20px;
+		font-size: 16px;
+	}
+}
+
+/* Estats especials per a mòbils */
+body.menu-open {
+	overflow: hidden;
+}
+
+/* Animació d'entrada per als botons del menú mòbil */
+@keyframes slideInFromLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.buttons-container.active .menu-button {
+    animation: slideInFromLeft 0.3s ease forwards;
+}
+
+.buttons-container.active .menu-button:nth-child(1) { animation-delay: 0.1s; }
+.buttons-container.active .menu-button:nth-child(2) { animation-delay: 0.2s; }
+.buttons-container.active .menu-button:nth-child(3) { animation-delay: 0.3s; }
+.buttons-container.active .menu-button:nth-child(4) { animation-delay: 0.4s; }
