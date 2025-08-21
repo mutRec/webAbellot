@@ -1,46 +1,56 @@
 <!DOCTYPE html>
 <html lang="ca">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>web Abellot</title>
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700;800&display=swap" rel="stylesheet">
-</head>
-<body>
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!---es el contenidor per la capçalera del format mòbil que tindra
+    un titol i un menu hamburguesa-->
     <div class="mobile-header">
-        <div class="mobile-title" aria-label="ABELLOT">ABELLOT.net</div>
-        <div class="burger-menu" id="burgerMenu">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
+      <div class="mobile-title" aria-label="ABELLOT">ABELLOT.net</div>
+      <div class="burger-menu" id="burgerMenu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
     </div>
+
     <nav class="mobile-menu">
-        <a href="#" data-section="section-1">correu</a>
-        <a href="#" data-section="section-2">núvol</a>
-        <a href="#" data-section="section-3">apps</a>
-        <a href="#" data-section="section-4">docs</a>
+      <a href="#" data-section="section-1">correu</a>
+      <a href="#" data-section="section-2">núvol</a>
+      <a href="#" data-section="section-3">apps</a>
+      <a href="#" data-section="section-4">docs</a>
     </nav>
     <main>
-       <div class="main-content"> 
+      <div class="main-content">
         <div class="circular-menu-container">
-            <div class="logo-container">
-                <img src="assets/images/abellot-logo.png" alt="Logotip de Rovisub" class="main-logo">
-            </div>
-            
-            <div class="buttons-container">
-                <button class="menu-button" data-section="section-1">correu</button>
-                <button class="menu-button" data-section="section-2">núvol</button>
-                <button class="menu-button" data-section="section-3">apps</button>
-                <button class="menu-button" data-section="section-4">docs</button>
-            </div>
+          <div class="logo-container">
+            <img
+              src="assets/images/abellot-logo.png"
+              alt="Logotip de Rovisub"
+              class="main-logo"
+            />
+          </div>
+
+          <div class="buttons-container">
+            <button class="menu-button" data-section="section-1">correu</button>
+            <button class="menu-button" data-section="section-2">núvol</button>
+            <button class="menu-button" data-section="section-3">apps</button>
+            <button class="menu-button" data-section="section-4">docs</button>
+          </div>
         </div>
-       </div>
-    <aside class="section-description">
+      </div>
+      <aside class="section-description">
         <!-- El contingut de les sections, es mostrarà aquí -->
-    </aside>
+      </aside>
     </main>
     <script src="assets/js/main.js"></script>
-</body>
+  </body>
 </html>
