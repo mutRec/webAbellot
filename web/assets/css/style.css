@@ -344,6 +344,34 @@ body {
 		display: none;
 	}
 
+	/* Mostrar el logotip centrat en mòbil */
+	.main-content {
+		margin-top: 56px; /* evitar que el header fix el tapi */
+	}
+
+	.circular-menu-container {
+		display: flex; /* sobreescriu el display:none anterior */
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		min-height: calc(100svh - 56px);
+	}
+
+	/* Amagar els botons en mòbil i només mostrar el logotip */
+	.buttons-container {
+		display: none;
+	}
+
+	/* Restablir posició del contenidor del logotip per centrat amb flex */
+	.logo-container {
+		position: static;
+		top: auto;
+		left: auto;
+		transform: none;
+		width: min(70vw, 320px);
+		height: min(70vw, 320px);
+	}
+
 	/* Secció de descripció per a mòbils a sobre de tot */
 	.section-description {
 		position: fixed;
@@ -371,6 +399,65 @@ body {
 		margin: 20px auto;
 		text-align: center;
 		display: block;
+	}
+
+	/* Fer que el botó d'accés no ocupi el 100% en mòbil */
+	.section-description .app-link {
+		width: auto;
+		max-width: none;
+		display: inline-block;
+		font-weight: 800;
+	}
+
+	/* Espai extra a dalt per al botó de tancar */
+	.section-description {
+		padding-top: 64px;
+	}
+
+	/* Substituir el botó "Tornar" per una 'X' flotant a la cantonada superior dreta en mòbil */
+	.section-description .back-button {
+		position: absolute;
+		top: 12px;
+		top: calc(env(safe-area-inset-top) + 12px);
+		right: 40px;
+		right: calc(env(safe-area-inset-right) + 40px);
+		width: 40px;
+		height: 40px;
+		margin: 0;
+		padding: 0;
+		border-radius: 50%;
+		background: #ffffff;
+		border: 2px solid #222;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		font-size: 0; /* amaga el text "Tornar" */
+		z-index: 2100;
+	}
+
+	.section-description .back-button::before {
+		content: '×';
+		font-size: 28px;
+		line-height: 1;
+		color: #222;
+	}
+
+	.section-description .back-button:hover {
+		background: #f2f2f2;
+	}
+
+	/* Tipografia més fina i evitar retall a la dreta en mòbil */
+	.section-description {
+		padding-left: calc(env(safe-area-inset-left) + 20px);
+		padding-right: calc(env(safe-area-inset-right) + 20px);
+		overflow-wrap: anywhere;
+		word-break: break-word;
+	}
+
+	.section-description p,
+	.section-description li,
+	.section-description a {
+		font-weight: 300;
 	}
 }
 
