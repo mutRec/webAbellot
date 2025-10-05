@@ -44,6 +44,7 @@ body {
   height: 80%;
   object-fit: contain; /* Assegurar que el logotip s'ajusta bé */
   border-radius: 50%; /* Arrodoneix la imatge */
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
 }
 
 /* Estils del contenidor dels botons */
@@ -252,12 +253,40 @@ body {
   display: none;
 }
 
+/* Footer */
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  text-align: center;
+  padding: 12px;
+  font-family: "Montserrat", Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+  z-index: 1000;
+  backdrop-filter: blur(4px);
+}
+
+.footer p {
+  margin: 0;
+}
+
+/* Ajustar el contingut principal per evitar que el footer el tapi */
+body {
+  padding-bottom: 50px;
+}
+
 /* Media Queries per a responsive design */
 @media (max-width: 768px) {
   body {
     padding: 0;
     min-height: 100svh;
     overflow-x: hidden;
+    padding-bottom: 50px;
   }
 
   /* Header mòbil amb logo i hamburguesa */
@@ -273,7 +302,7 @@ body {
     padding: 0 12px;
     background: linear-gradient(115deg, #ffd600 0%, #ffb300 50%, #fdfeff 100%);
     z-index: 1002;
-    border-bottom: 1px solid #222;
+    border-bottom: 4px solid #222;
   }
 
   .mobile-logo {
@@ -284,11 +313,12 @@ body {
 
   .mobile-title {
     font-family: "Montserrat", Arial, sans-serif;
-    font-weight: 800;
-    font-size: 22px;
-    letter-spacing: 1.0px;
+    font-weight: 900;
+    font-size: 28px;
+    letter-spacing: 1px;
     color: #222;
     user-select: none;
+	text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
   }
 
   /* Burger dins el header */
@@ -464,6 +494,11 @@ body {
   .section-description a {
     font-weight: 300;
   }
+
+  .footer {
+    padding: 10px;
+    font-size: 13px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -521,3 +556,4 @@ body.menu-open {
 .buttons-container.active .menu-button:nth-child(4) {
   animation-delay: 0.4s;
 }
+
